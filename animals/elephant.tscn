@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ceptbh3jchjgr"]
+
+[ext_resource type="Script" uid="uid://bpblxbqq7kn3p" path="res://animals/elephant.gd" id="1_fysu2"]
+[ext_resource type="Texture2D" uid="uid://cmkpmdyrv0tap" path="res://animals/elephant.png" id="1_o1n8o"]
+
+[sub_resource type="Animation" id="Animation_fysu2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("elephant:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7gnv4"]
+resource_name = "elephant"
+length = 3.5666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("elephant:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.26666668, 0.6666667, 1.0666667, 1.4666667, 1.8666667, 2.2666667, 2.7, 3.1333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i513r"]
+_data = {
+&"RESET": SubResource("Animation_fysu2"),
+&"elephant": SubResource("Animation_7gnv4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_448ch"]
+size = Vector2(973, 856)
+
+[node name="elephant" type="CharacterBody2D" unique_id=1288512703]
+script = ExtResource("1_fysu2")
+
+[node name="elephant" type="Sprite2D" parent="." unique_id=270042055]
+position = Vector2(-314.0025, -27.224007)
+scale = Vector2(2.2048497, 2.1231809)
+texture = ExtResource("1_o1n8o")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=76908529]
+libraries/ = SubResource("AnimationLibrary_i513r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237589784]
+position = Vector2(-240, -24)
+shape = SubResource("RectangleShape2D_448ch")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1276124529]

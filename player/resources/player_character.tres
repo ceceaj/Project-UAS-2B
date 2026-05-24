@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=41 format=3 uid="uid://crww0m2lcreh7"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://crww0m2lcreh7"]
 
 [ext_resource type="Texture2D" uid="uid://cg6k4xox2p0p6" path="res://player/assets/farmer_0/tdfarmchar_0_idledwn_0-sheet.png" id="1_4ufjl"]
 [ext_resource type="Texture2D" uid="uid://cboapo3swky0l" path="res://player/assets/farmer_0/tdfarmchar_0_rundwn_0-sheet.png" id="1_kqp8m"]
