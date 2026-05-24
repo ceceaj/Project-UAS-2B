@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brl1kiih31hg6"
+path="res://.godot/imported/langkah 1.wav-8c2d2f02e6b2e89abcb518f1027a4514.sample"
+
+[deps]
+
+source_file="res://audio/langkah 1.wav"
+dest_files=["res://.godot/imported/langkah 1.wav-8c2d2f02e6b2e89abcb518f1027a4514.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

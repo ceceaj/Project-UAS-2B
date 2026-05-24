@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpsm88yi2kl7t"
+path="res://.godot/imported/Sfx_Suara cahaya muncul.wav-4dd7ba0a4cfb80e5b7c4949aa7f3482e.sample"
+
+[deps]
+
+source_file="res://audio/Sfx_Suara cahaya muncul.wav"
+dest_files=["res://.godot/imported/Sfx_Suara cahaya muncul.wav-4dd7ba0a4cfb80e5b7c4949aa7f3482e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
