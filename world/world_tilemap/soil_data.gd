@@ -23,4 +23,3 @@ var current_crop: Crop = null:
 		else:
 			total_month_unchanged = 1
 		current_crop = new_crop
-

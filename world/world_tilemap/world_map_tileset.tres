@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b08xycuhsrrub" path="res://world/world_tilemap/assets/tileset_tdfarmtiles_dirt.png" id="13_uxrhq"]
 [ext_resource type="Texture2D" uid="uid://b1rm62gaft40i" path="res://world/world_tilemap/assets/large_rock_sheet.png" id="14_ll84v"]
 [ext_resource type="Texture2D" uid="uid://by50vq0otluv8" path="res://world/world_tilemap/assets/tile_selector.png" id="15_8ojqq"]
+[ext_resource type="Texture2D" uid="uid://dvr1lh3hwmhf1" path="res://world/world_tilemap/assets/OFFtdfarmobj_tree_0_0.png" id="17_rahf1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_8c0rp"]
 tile_data = PackedInt32Array(0, 22, 0, 131072, 22, 0, 1, 23, 0, 65537, 22, 0, 2, 22, 0, 131074, 22, 0)
@@ -1501,6 +1502,22 @@ texture = ExtResource("15_8ojqq")
 0:1/animation_frame_3/duration = 0.25
 0:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2fj30"]
+texture = ExtResource("17_rahf1")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+2:3/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -1531,6 +1548,7 @@ sources/21 = SubResource("TileSetAtlasSource_nj13m")
 sources/5 = SubResource("TileSetAtlasSource_lvt8b")
 sources/25 = SubResource("TileSetAtlasSource_bpihk")
 sources/23 = SubResource("TileSetAtlasSource_w8nad")
+sources/6 = SubResource("TileSetAtlasSource_2fj30")
 pattern_0 = SubResource("TileMapPattern_8c0rp")
 pattern_1 = SubResource("TileMapPattern_du2tu")
 pattern_2 = SubResource("TileMapPattern_uyn1l")
