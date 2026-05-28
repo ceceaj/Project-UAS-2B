@@ -148,6 +148,3 @@ func _propagate_disease(cell: Vector2i, family: Crop.FAMILIES) -> void:
 		if not neighbor_crop.sick and neighbor_crop.family == family:
 			neighbor_crop.sick = Global.bernoulli(P_PROPAGATION)
 		
-
-
-
