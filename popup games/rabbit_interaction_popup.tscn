@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dns35pci7h4c7"]
+
+[ext_resource type="Script" uid="uid://cs63rp25jqk3a" path="res://popup games/cow_interaction_popup.gd" id="1_ms1yp"]
+[ext_resource type="Texture2D" uid="uid://xyrlq5vph5hv" path="res://elemenpopup/Dialog.png" id="2_86o8p"]
+[ext_resource type="FontFile" uid="uid://bxyb23qbuo64n" path="res://assets/Fonts/Kenney Pixel.ttf" id="3_cfjw5"]
+[ext_resource type="Texture2D" uid="uid://ds775i7jac6jn" path="res://elemenpopup/1.png" id="4_pi23h"]
+[ext_resource type="Texture2D" uid="uid://dpyc5xd6rsgbr" path="res://elemenpopup/10.png" id="5_thjhw"]
+
+[sub_resource type="FontVariation" id="FontVariation_avwio"]
+base_font = ExtResource("3_cfjw5")
+
+[node name="CowInteractionPopup" type="CanvasLayer" unique_id=797287125]
+script = ExtResource("1_ms1yp")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=1803619993]
+offset_left = 179.0
+offset_top = 103.0
+offset_right = 415.0
+offset_bottom = 221.0
+texture = ExtResource("2_86o8p")
+expand_mode = 1
+
+[node name="LevelBox" type="Label" parent="Panel" unique_id=1484684699]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 57.0
+offset_right = 106.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("3_cfjw5")
+theme_override_font_sizes/font_size = 12
+text = "Level 1
+"
+
+[node name="Label" type="Label" parent="Panel" unique_id=238317307]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 79.0
+offset_right = 222.0
+offset_bottom = 102.0
+theme_override_fonts/font = SubResource("FontVariation_avwio")
+theme_override_font_sizes/font_size = 15
+text = "Mau menjawab kuis tentang sapi?"
+
+[node name="StartQuizButton" type="TextureButton" parent="Panel" unique_id=1374530750]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 96.0
+offset_right = 104.0
+offset_bottom = 145.0
+texture_normal = ExtResource("4_pi23h")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CloseButton" type="TextureButton" parent="Panel" unique_id=2125768706]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 95.0
+offset_right = 211.0
+offset_bottom = 147.0
+texture_normal = ExtResource("5_thjhw")
+ignore_texture_size = true
+stretch_mode = 0

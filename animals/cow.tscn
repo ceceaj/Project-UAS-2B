@@ -1,10 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://uu11t1245efj"]
+[gd_scene format=3 uid="uid://uu11t1245efj"]
 
-[ext_resource type="Script" path="res://animals/cow.gd" id="1_pex83"]
+[ext_resource type="Script" uid="uid://bulli6pulr8sx" path="res://animals/cow.gd" id="1_pex83"]
 [ext_resource type="Texture2D" uid="uid://cbmkb7rbbs488" path="res://animals/Free Cow Sprites-export.png" id="2_u8xg7"]
-[ext_resource type="AudioStream" uid="uid://c5ewvldmxefe3" path="res://sounds/Agraria_-_cow_goes_moo.wav" id="3_lsk8v"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51p27"]
 
 [sub_resource type="Animation" id="Animation_g02ib"]
 length = 0.001
@@ -15,7 +12,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
@@ -39,26 +36,34 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4mp2h"]
 _data = {
-"RESET": SubResource("Animation_g02ib"),
-"cow": SubResource("Animation_how0t")
+&"RESET": SubResource("Animation_g02ib"),
+&"cow": SubResource("Animation_how0t")
 }
 
-[node name="Cow" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51p27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey58s"]
+size = Vector2(86, 48.5)
+
+[node name="Cow" type="CharacterBody2D" unique_id=699930587]
 script = ExtResource("1_pex83")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=703214454]
+libraries/ = SubResource("AnimationLibrary_4mp2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=743282952]
 texture_filter = 1
 texture = ExtResource("2_u8xg7")
 hframes = 3
 vframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2040874164]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894401922]
 shape = SubResource("RectangleShape2D_51p27")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_4mp2h")
-}
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1237302736]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_lsk8v")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=290308227]
+position = Vector2(-2, 4.25)
+shape = SubResource("RectangleShape2D_ey58s")
