@@ -1,27 +1,30 @@
 extends Node2D
 
+
 var questions: Array[Dictionary] = [
 	{
-		"question": "1. Anak sapi disebut...",
-		"answers": ["A. Pedet", "B. Cempe", "C. Anak ayam"],
+		"question": "1. Hidung panjang pada gajah disebut...",
+		"answers": ["A. Belalai", "B. Paruh", "C. Sirip"],
 		"correct": 0
 	},
 	{
-		"question": "2. Makanan utama sapi adalah...",
-		"answers": ["A. Ikan", "B. Rumput", "C. Daging"],
+		"question": "2. Makanan utama gajah adalah...",
+		"answers": ["A. Daging", "B. Tumbuhan", "C. Ikan"],
 		"correct": 1
 	},
 	{
-		"question": "3. Manfaat sapi bagi manusia adalah...",
-		"answers": ["A. Susu", "B. Madu", "C. Telur"],
+		"question": "3. Gajah termasuk hewan...",
+		"answers": ["A. Herbivora", "B. Karnivora", "C. Omnivora"],
 		"correct": 0
 	}
 ]
+
 
 var current_question_index: int = 0
 var score: int = 0
 var wrong_attempts: int = 0
 var can_answer: bool = true
+
 
 @onready var material_text: RichTextLabel = $UI/MaterialPanel/MaterialContentBox/MaterialText
 @onready var quiz_panel: Control = $UI/MaterialPanel/MaterialContentBox/QuizPanel
@@ -79,7 +82,7 @@ func show_material_state() -> void:
 	retry_button.visible = false
 
 	material_text.bbcode_enabled = true
-	material_text.text = "Sapi adalah hewan ternak yang banyak dipelihara manusia. Sapi termasuk hewan mamalia karena menyusui anaknya. Anak sapi disebut pedet.\n\nSapi adalah hewan herbivora, yaitu pemakan tumbuhan. Makanan utama sapi adalah rumput, tetapi sapi juga bisa makan jerami dan pakan ternak.\n\nSapi sangat bermanfaat bagi manusia. Sapi dapat menghasilkan susu, dan kotorannya bisa dimanfaatkan sebagai pupuk tanaman. Agar tetap sehat, sapi perlu diberi makan, minum air bersih, dan tinggal di kandang yang bersih."
+	material_text.text = "Gajah adalah mamalia darat terbesar di dunia. Gajah memiliki tubuh besar, telinga lebar, dan belalai yang panjang.\n\nBelalai gajah digunakan untuk mengambil makanan, minum air, bernapas, dan berkomunikasi. Gajah adalah hewan herbivora, yaitu hewan pemakan tumbuhan. Makanan gajah antara lain rumput, daun, buah, dan kulit pohon.\n\nGajah biasanya hidup berkelompok yang disebut kawanan. Gajah dikenal sebagai hewan yang cerdas, penyayang, dan memiliki ingatan yang kuat. Gajah juga penting bagi alam karena membantu menyebarkan biji tumbuhan dan menjaga keseimbangan lingkungan."
 
 
 func _on_start_quiz_button_pressed() -> void:
@@ -155,7 +158,7 @@ func answer_question(selected_index: int) -> void:
 
 
 func show_quiz_finished() -> void:
-	print("Kuis sapi selesai. Skor: ", score, " dari ", questions.size())
+	print("Kuis gajah selesai. Skor: ", score, " dari ", questions.size())
 
 	material_text.visible = false
 	quiz_panel.visible = false
@@ -199,16 +202,16 @@ func show_result_text() -> void:
 
 	if score == questions.size():
 		title_result = "Hebat!"
-		message = "Kamu menyelesaikan level sapi dengan sempurna!"
-		hint_text = "Cari hewan harimau untuk\nmelanjutkan ke [color=#FFD84D]Level 2![/color]"
+		message = "Kamu berhasil memahami materi gajah dengan sempurna!"
+		hint_text = "Level gajah selesai."
 	elif score == 2:
 		title_result = "Bagus!"
-		message = "Kamu hampir menguasai materi sapi."
-		hint_text = "Ulangi kuis untuk mendapatkan\npetunjuk berikutnya."
+		message = "Kamu hampir menguasai materi gajah."
+		hint_text = "Coba ulangi kuis agar hasilnya lebih sempurna."
 	else:
 		title_result = "Tetap Semangat!"
-		message = "Baca lagi materinya dan coba pahami kembali."
-		hint_text = "Ulangi kuis untuk mendapatkan\npetunjuk berikutnya."
+		message = "Baca lagi materi gajah dan coba pahami kembali."
+		hint_text = "Ulangi kuis untuk memperbaiki skor."
 
 	result_text.bbcode_enabled = true
 	result_text.text = "[center]" \
@@ -223,11 +226,11 @@ func show_result_text() -> void:
 
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://world/world.tscn")
+	show_material_state()
 
 
 func _on_finish_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://world/world.tscn")
+	show_material_state()
 
 
 func _on_retry_button_pressed() -> void:

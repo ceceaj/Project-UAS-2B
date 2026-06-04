@@ -1,38 +1,38 @@
-[gd_scene format=3 uid="uid://r2euqflp0spx"]
+[gd_scene format=3 uid="uid://bopa7wkh1ltuc"]
 
-[ext_resource type="Texture2D" uid="uid://cl4t3cyrld3qr" path="res://elemenpopup/ChatGPT Image May 31, 2026, 01_26_53 PM.png" id="1_274y2"]
-[ext_resource type="Script" uid="uid://2cty1eeboqdr" path="res://popup games/cow_quiz.gd" id="1_lc7tt"]
-[ext_resource type="Texture2D" uid="uid://17b211p0goqo" path="res://elemenpopup/8540dffe-a66d-4237-9f5e-d2a367a63c7f__1_-removebg-preview.png" id="2_tyjsg"]
-[ext_resource type="Texture2D" uid="uid://rqk616byxe27" path="res://elemenpopup/4.png" id="3_3671l"]
-[ext_resource type="Texture2D" uid="uid://bwe0xu47erd5o" path="res://elemenpopup/40108012-fcf0-49f9-980c-702073de9962-removebg-preview.png" id="5_3671l"]
-[ext_resource type="Texture2D" uid="uid://dpyc5xd6rsgbr" path="res://elemenpopup/10.png" id="6_66v8m"]
-[ext_resource type="Texture2D" uid="uid://b2qn7sb00h424" path="res://elemenpopup/eca15f d6783d c25229 a83319 851509 610500 410000.png" id="6_ald30"]
-[ext_resource type="Texture2D" uid="uid://ds775i7jac6jn" path="res://elemenpopup/1.png" id="7_ald30"]
-[ext_resource type="Texture2D" uid="uid://bw7pas44bxphp" path="res://world/elemen/bintang dan koin/Icon - 15.png" id="8_apew4"]
-[ext_resource type="Texture2D" uid="uid://dbdd8xdj3ywh2" path="res://elemenpopup/13.png" id="11_6fi28"]
+[ext_resource type="Script" uid="uid://2cty1eeboqdr" path="res://popup games/cow_quiz.gd" id="1_1k14d"]
+[ext_resource type="Texture2D" uid="uid://b4udgqsqi3doh" path="res://elemenpopup/ChatGPT Image Jun 2, 2026, 02_26_58 PM.png" id="2_7lxka"]
+[ext_resource type="Texture2D" uid="uid://17b211p0goqo" path="res://elemenpopup/8540dffe-a66d-4237-9f5e-d2a367a63c7f__1_-removebg-preview.png" id="3_h0mgq"]
+[ext_resource type="Texture2D" uid="uid://rqk616byxe27" path="res://elemenpopup/4.png" id="4_t0efw"]
+[ext_resource type="Texture2D" uid="uid://bwe0xu47erd5o" path="res://elemenpopup/40108012-fcf0-49f9-980c-702073de9962-removebg-preview.png" id="5_0mcge"]
+[ext_resource type="Texture2D" uid="uid://b2qn7sb00h424" path="res://elemenpopup/eca15f d6783d c25229 a83319 851509 610500 410000.png" id="6_qb3xj"]
+[ext_resource type="Texture2D" uid="uid://bw7pas44bxphp" path="res://world/elemen/bintang dan koin/Icon - 15.png" id="7_3t02x"]
+[ext_resource type="Texture2D" uid="uid://dpyc5xd6rsgbr" path="res://elemenpopup/10.png" id="8_h0uw4"]
+[ext_resource type="Texture2D" uid="uid://ds775i7jac6jn" path="res://elemenpopup/1.png" id="9_0h82p"]
+[ext_resource type="Texture2D" uid="uid://dbdd8xdj3ywh2" path="res://elemenpopup/13.png" id="10_y558v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_56r0j"]
 load_path = "res://.godot/imported/12.png-842801d0f93ec7443ce32ccf269227a3.ctex"
 
-[node name="CowQuiz" type="Node2D" unique_id=1045856533]
-script = ExtResource("1_lc7tt")
+[node name="gajah_quiz" type="Node2D" unique_id=1045856533]
+script = ExtResource("1_1k14d")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1378152634]
 
 [node name="Background" type="TextureRect" parent="UI" unique_id=1940743252]
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 637.0
-offset_bottom = 360.0
-texture = ExtResource("1_274y2")
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 639.0
+offset_bottom = 361.0
+texture = ExtResource("2_7lxka")
 expand_mode = 1
 
 [node name="MaterialPanel" type="TextureRect" parent="UI" unique_id=519978096]
-offset_left = 115.0
-offset_top = 16.0
-offset_right = 517.0
-offset_bottom = 348.0
-texture = ExtResource("2_tyjsg")
+offset_left = 140.0
+offset_top = 13.0
+offset_right = 542.0
+offset_bottom = 345.0
+texture = ExtResource("3_h0mgq")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -42,7 +42,7 @@ offset_left = 165.0
 offset_top = -7.0
 offset_right = 242.0
 offset_bottom = 58.0
-texture = ExtResource("3_3671l")
+texture = ExtResource("4_t0efw")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -53,18 +53,20 @@ anchor_top = -0.04819277
 offset_left = 38.0
 offset_right = 363.0
 offset_bottom = 338.0
-texture = ExtResource("5_3671l")
+texture = ExtResource("5_0mcge")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MaterialText" type="RichTextLabel" parent="UI/MaterialPanel/MaterialContentBox" unique_id=1978909650]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 79.0
-offset_right = 295.0
-offset_bottom = 269.0
+offset_left = 36.0
+offset_top = 76.0
+offset_right = 288.0
+offset_bottom = 274.0
 theme_override_font_sizes/normal_font_size = 12
-text = "Sapi adalah hewan ternak yang banyak dipelihara manusia. Sapi termasuk hewan mamalia karena menyusui anaknya. Anak sapi disebut pedet. Sapi adalah hewan herbivora, yaitu pemakan tumbuhan. Makanan utama sapi adalah rumput, tetapi sapi juga bisa makan jerami dan pakan ternak. Sapi sangat bermanfaat bagi manusia. Sapi dapat menghasilkan susu, dan kotorannya bisa dimanfaatkan sebagai pupuk tanaman. Agar tetap sehat, sapi perlu diberi makan, minum air bersih, dan tinggal di kandang yang bersih."
+text = "Gajah adalah hewan darat terbesar di dunia. Gajah termasuk hewan mamalia karena melahirkan dan menyusui anaknya.
+Gajah adalah hewan herbivora, yaitu pemakan tumbuhan. Makanan gajah adalah rumput, daun, buah, dan ranting.
+Gajah memiliki belalai panjang yang digunakan untuk bernapas, minum, mengambil makanan, dan menyentuh benda. Gajah juga memiliki telinga besar dan hidup berkelompok di hutan atau padang rumput."
 horizontal_alignment = 3
 
 [node name="QuizPanel" type="TextureRect" parent="UI/MaterialPanel/MaterialContentBox" unique_id=311491934]
@@ -90,12 +92,13 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonA" type="TextureButton" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel" unique_id=1109162564]
+visible = false
 layout_mode = 1
 offset_left = 220.0
 offset_top = -319.0
 offset_right = 328.0
 offset_bottom = -259.0
-texture_normal = ExtResource("6_ald30")
+texture_normal = ExtResource("6_qb3xj")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -116,6 +119,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonB" type="TextureButton" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel" unique_id=618778345]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -1.3661954
@@ -124,7 +128,7 @@ offset_left = 353.0
 offset_top = -26.229248
 offset_right = -190.651
 offset_bottom = -259.31998
-texture_normal = ExtResource("6_ald30")
+texture_normal = ExtResource("6_qb3xj")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -145,6 +149,7 @@ theme_override_font_sizes/font_size = 13
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonC" type="TextureButton" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel" unique_id=1869795255]
+visible = false
 custom_minimum_size = Vector2(108, 60)
 layout_mode = 1
 anchors_preset = -1
@@ -157,7 +162,7 @@ offset_right = -240.0
 offset_bottom = -406.591
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("6_ald30")
+texture_normal = ExtResource("6_qb3xj")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -207,7 +212,7 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 41.0
-texture = ExtResource("8_apew4")
+texture = ExtResource("7_3t02x")
 expand_mode = 1
 
 [node name="Star2" type="TextureRect" parent="UI/MaterialPanel/MaterialContentBox/StarContainer" unique_id=1062414627]
@@ -216,7 +221,7 @@ layout_mode = 0
 offset_left = 34.0
 offset_right = 64.0
 offset_bottom = 41.0
-texture = ExtResource("8_apew4")
+texture = ExtResource("7_3t02x")
 expand_mode = 1
 
 [node name="Star3" type="TextureRect" parent="UI/MaterialPanel/MaterialContentBox/StarContainer" unique_id=270947830]
@@ -225,7 +230,7 @@ layout_mode = 0
 offset_left = 68.0
 offset_right = 98.0
 offset_bottom = 41.0
-texture = ExtResource("8_apew4")
+texture = ExtResource("7_3t02x")
 expand_mode = 1
 
 [node name="BackButton" type="TextureButton" parent="UI/MaterialPanel" unique_id=2018761109]
@@ -234,7 +239,7 @@ offset_left = 83.0
 offset_top = 256.0
 offset_right = 175.0
 offset_bottom = 338.0
-texture_normal = ExtResource("6_66v8m")
+texture_normal = ExtResource("8_h0uw4")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -245,7 +250,7 @@ offset_left = 223.0
 offset_top = 258.0
 offset_right = 315.0
 offset_bottom = 340.0
-texture_normal = ExtResource("7_ald30")
+texture_normal = ExtResource("9_0h82p")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -257,7 +262,7 @@ offset_left = 153.0
 offset_top = 255.0
 offset_right = 250.0
 offset_bottom = 337.0
-texture_normal = ExtResource("11_6fi28")
+texture_normal = ExtResource("10_y558v")
 ignore_texture_size = true
 stretch_mode = 0
 
