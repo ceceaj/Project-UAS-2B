@@ -44,7 +44,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tjls"]
-size = Vector2(639, 282)
+size = Vector2(246, 181)
 
 [node name="Bird" type="CharacterBody2D" unique_id=2110420192]
 script = ExtResource("1_0tjls")
@@ -63,12 +63,7 @@ libraries/ = SubResource("AnimationLibrary_v5shh")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1941172700]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=683358451]
+[node name="Area2D" type="Area2D" parent="." unique_id=1402670267]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=666182597]
-position = Vector2(-45.5, 83)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1362616570]
 shape = SubResource("RectangleShape2D_0tjls")
-
-[node name="Label" type="Label" parent="." unique_id=1938758533]
-offset_right = 40.0
-offset_bottom = 23.0
