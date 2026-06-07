@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://dfo0n52ap1ivw" path="res://world/elemen/bunga/Desain tanpa judul - 3.png" id="18_2tavo"]
 [ext_resource type="Texture2D" uid="uid://2wq0dvkukx08" path="res://world/elemen/bunga/Desain tanpa judul - 5.png" id="19_k8wd0"]
 [ext_resource type="Texture2D" uid="uid://j0l8aka8wfev" path="res://world/elemen/bunga/Desain tanpa judul - 7.png" id="20_j7vgi"]
+[ext_resource type="PackedScene" uid="uid://i4k28ukuw0wu" path="res://animals/bird.tscn" id="21_aysyn"]
+[ext_resource type="PackedScene" uid="uid://ceptbh3jchjgr" path="res://animals/elephant.tscn" id="22_3ljsx"]
+[ext_resource type="PackedScene" uid="uid://dqov0hnqb30s1" path="res://animals/rabbit.tscn" id="23_gi7ib"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qseru"]
 line_spacing = 0.0
@@ -197,5 +200,29 @@ texture = ExtResource("20_j7vgi")
 position = Vector2(249.00009, 606.99994)
 scale = Vector2(0.011036995, 0.013259302)
 texture = ExtResource("20_j7vgi")
+
+[node name="Bird" parent="." unique_id=2110420192 instance=ExtResource("21_aysyn")]
+position = Vector2(110, 370)
+scale = Vector2(0.04, 0.04)
+
+[node name="Bird2" parent="." unique_id=1255692247 instance=ExtResource("21_aysyn")]
+position = Vector2(734, 493)
+scale = Vector2(0.04, 0.04)
+
+[node name="elephant" parent="." unique_id=1288512703 instance=ExtResource("22_3ljsx")]
+position = Vector2(468.99997, 565)
+scale = Vector2(0.09, 0.09)
+
+[node name="rabbit" parent="." unique_id=2065475722 instance=ExtResource("23_gi7ib")]
+position = Vector2(764, 182)
+scale = Vector2(0.1, 0.1)
+
+[node name="rabbit2" parent="." unique_id=1959219573 instance=ExtResource("23_gi7ib")]
+position = Vector2(843, 218)
+scale = Vector2(0.1, 0.1)
+
+[node name="Bird3" parent="." unique_id=246003612 instance=ExtResource("21_aysyn")]
+position = Vector2(407, 140)
+scale = Vector2(0.04, 0.04)
 
 [connection signal="button_up" from="HUD/NextMonthButton" to="." method="time_skip"]
