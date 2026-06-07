@@ -5,17 +5,17 @@ extends CanvasLayer
 @onready var label: Label = $Panel/Label
 
 func _ready():
-	print("CowInteractionPopup berhasil muncul")
+	print("RabbitInteractionPopup berhasil muncul")
 
-	label.text = "Mau menjawab kuis tentang sapi?"
+	label.text = "Mau menjawab kuis tentang kelinci?"
 	
 	start_quiz_button.pressed.connect(_on_start_quiz_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
 
 func _on_start_quiz_button_pressed():
-	print("Tombol Mulai Cow ditekan")
-	get_tree().change_scene_to_file("res://popup games/cow_quiz.tscn")
+	print("Tombol Mulai Rabbit ditekan")
+	get_tree().change_scene_to_file("res://popup games/rabbit_quiz.tscn")
 
 func _on_close_button_pressed():
-	print("Tombol Kembali Cow ditekan")
+	print("Tombol Kembali Rabbit ditekan")
 	queue_free()

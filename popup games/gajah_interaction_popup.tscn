@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwja3632k5hl5"]
 
-[ext_resource type="Script" path="res://popup games/gajah_interaction_popup.gd" id="1_lv4w0"]
+[ext_resource type="Script" uid="uid://c1dxexnxhxgda" path="res://popup games/gajah_interaction_popup.gd" id="1_lv4w0"]
 [ext_resource type="Texture2D" uid="uid://xyrlq5vph5hv" path="res://elemenpopup/Dialog.png" id="2_gcrvi"]
 [ext_resource type="FontFile" uid="uid://bxyb23qbuo64n" path="res://assets/Fonts/Kenney Pixel.ttf" id="3_oha8y"]
 [ext_resource type="Texture2D" uid="uid://ds775i7jac6jn" path="res://elemenpopup/1.png" id="4_636x6"]

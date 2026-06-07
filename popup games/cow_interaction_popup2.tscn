@@ -22,20 +22,20 @@ expand_mode = 1
 
 [node name="LevelBox" type="Label" parent="Panel" unique_id=1484684699]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 57.0
-offset_right = 106.0
-offset_bottom = 118.0
+offset_left = 37.0
+offset_top = 58.0
+offset_right = 108.0
+offset_bottom = 119.0
 theme_override_fonts/font = ExtResource("3_wdu8w")
 theme_override_font_sizes/font_size = 12
-text = "Level 1
+text = "Level 2
 "
 
 [node name="Label" type="Label" parent="Panel" unique_id=238317307]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 44.0
 offset_top = 79.0
-offset_right = 222.0
+offset_right = 225.0
 offset_bottom = 102.0
 theme_override_fonts/font = SubResource("FontVariation_avwio")
 theme_override_font_sizes/font_size = 15
@@ -43,20 +43,20 @@ text = "Mau menjawab kuis tentang sapi?"
 
 [node name="StartQuizButton" type="TextureButton" parent="Panel" unique_id=1374530750]
 layout_mode = 0
-offset_left = 29.0
+offset_left = 130.0
 offset_top = 96.0
-offset_right = 104.0
-offset_bottom = 145.0
+offset_right = 205.0
+offset_bottom = 147.0
 texture_normal = ExtResource("4_h1f6u")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="CloseButton" type="TextureButton" parent="Panel" unique_id=2125768706]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 95.0
-offset_right = 211.0
-offset_bottom = 147.0
+offset_left = 34.0
+offset_top = 94.0
+offset_right = 104.0
+offset_bottom = 146.0
 texture_normal = ExtResource("5_f5ekx")
 ignore_texture_size = true
 stretch_mode = 0

@@ -2,19 +2,19 @@ extends Node2D
 
 var questions: Array[Dictionary] = [
 	{
-		"question": "Anak sapi disebut...",
-		"answers": ["Pedet", "Cempe", "Anak ayam"],
-		"correct": 0
-	},
-	{
-		"question": "Makanan utama sapi adalah...",
-		"answers": ["Ikan", "Rumput", "Daging"],
+		"question": "Kata kelinci dieja menjadi...",
+		"answers": ["k-e-n-l-i-c-i", "k-e-l-i-n-c-i", "k-l-e-i-n-c-i"],
 		"correct": 1
 	},
 	{
-		"question": "Manfaat sapi bagi manusia adalah...",
-		"answers": ["Susu", "Madu", "Telur"],
-		"correct": 0
+		"question": "Kata telinga dieja menjadi...",
+		"answers": ["t-e-g-l-i-n-a", "t-i-l-e-n-g-a", "t-e-l-i-n-g-a"],
+		"correct": 2
+	},
+	{
+		"question": "Kelinci melompat menggunakan...",
+		"answers": ["Sayap", "Kaki belakang", "Sirip"],
+		"correct": 1
 	}
 ]
 
@@ -79,7 +79,7 @@ func show_material_state() -> void:
 	retry_button.visible = false
 
 	material_text.bbcode_enabled = true
-	material_text.text = "Sapi adalah hewan ternak yang banyak dipelihara manusia. Sapi termasuk hewan mamalia karena menyusui anaknya. Anak sapi disebut pedet.\n\nSapi adalah hewan herbivora, yaitu pemakan tumbuhan. Makanan utama sapi adalah rumput, tetapi sapi juga bisa makan jerami dan pakan ternak.\n\nSapi sangat bermanfaat bagi manusia. Sapi dapat menghasilkan susu, dan kotorannya bisa dimanfaatkan sebagai pupuk tanaman. Agar tetap sehat, sapi perlu diberi makan, minum air bersih, dan tinggal di kandang yang bersih."
+	material_text.text = "Kelinci adalah hewan kecil yang lucu. Kelinci mempunyai bulu yang halus, telinga yang panjang, dan kaki belakang yang kuat. Kelinci bergerak dengan cara melompat. Saat melompat, kelinci menggunakan kaki belakangnya.\n\nKelinci suka makan tumbuhan. Makanan kelinci antara lain rumput, wortel, dan sayuran. Kelinci perlu diberi makanan yang cukup dan air bersih agar tetap sehat. Kelinci biasanya tinggal di tempat yang aman dan nyaman.\n\nKelinci juga memiliki pendengaran yang baik. Telinga panjang kelinci membantu kelinci mendengar suara di sekitarnya. Untuk belajar membaca, kita bisa mengeja beberapa kata tentang kelinci. Kata kelinci dieja k-e-l-i-n-c-i. Kata telinga dieja t-e-l-i-n-g-a."
 
 
 func _on_start_quiz_button_pressed() -> void:
@@ -153,7 +153,7 @@ func answer_question(selected_index: int) -> void:
 
 
 func show_quiz_finished() -> void:
-	print("Kuis sapi selesai. Skor: ", score, " dari ", questions.size())
+	print("Kuis kelinci selesai. Skor: ", score, " dari ", questions.size())
 
 	material_text.visible = false
 	quiz_panel.visible = false
@@ -197,11 +197,11 @@ func show_result_text() -> void:
 
 	if score == questions.size():
 		title_result = "Hebat!"
-		message = "Kamu menyelesaikan level sapi dengan sempurna!"
-		hint_text = "Cari hewan gajah untuk\nmelanjutkan ke [color=#FFD84D]Level berikutnya![/color]"
+		message = "Kamu menyelesaikan level kelinci dengan sempurna!"
+		hint_text = "Cari hewan sapi untuk\nmelanjutkan ke [color=#FFD84D]Level berikutnya![/color]"
 	elif score == 2:
 		title_result = "Bagus!"
-		message = "Kamu hampir menguasai materi sapi."
+		message = "Kamu hampir menguasai materi kelinci."
 		hint_text = "Ulangi kuis untuk mendapatkan\npetunjuk berikutnya."
 	else:
 		title_result = "Tetap Semangat!"

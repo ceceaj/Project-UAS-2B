@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://bf5lx74tsp26"]
+[gd_scene format=3 uid="uid://bopa7wkh1ltuc"]
 
-[ext_resource type="Script" path="res://popup games/gajah_quiz.gd" id="1_7lxka"]
-[ext_resource type="Texture2D" path="res://elemenpopup/ChatGPT Image Jun 2, 2026, 02_26_58 PM.png" id="2_7lxka"]
+[ext_resource type="Script" uid="uid://cd3rp1jdjh5t1" path="res://popup games/gajah_quiz.gd" id="1_7lxka"]
+[ext_resource type="Texture2D" uid="uid://b4udgqsqi3doh" path="res://elemenpopup/ChatGPT Image Jun 2, 2026, 02_26_58 PM.png" id="2_7lxka"]
 [ext_resource type="Texture2D" uid="uid://17b211p0goqo" path="res://elemenpopup/8540dffe-a66d-4237-9f5e-d2a367a63c7f__1_-removebg-preview.png" id="3_h0mgq"]
-[ext_resource type="Texture2D" uid="uid://rqk616byxe27" path="res://elemenpopup/4.png" id="4_t0efw"]
+[ext_resource type="Texture2D" uid="uid://brtmm206csc2n" path="res://popup games/6.png" id="4_7lxka"]
 [ext_resource type="Texture2D" uid="uid://bwe0xu47erd5o" path="res://elemenpopup/40108012-fcf0-49f9-980c-702073de9962-removebg-preview.png" id="5_0mcge"]
-[ext_resource type="FontFile" path="res://elemenpopup/Poppins-Bold.ttf" id="6_h0mgq"]
+[ext_resource type="FontFile" uid="uid://ir6vhl63ck2j" path="res://popup games/Poppins-Bold.ttf" id="6_7lxka"]
 [ext_resource type="Texture2D" uid="uid://b2qn7sb00h424" path="res://elemenpopup/eca15f d6783d c25229 a83319 851509 610500 410000.png" id="6_qb3xj"]
 [ext_resource type="Texture2D" uid="uid://bw7pas44bxphp" path="res://world/elemen/bintang dan koin/Icon - 15.png" id="7_3t02x"]
 [ext_resource type="Texture2D" uid="uid://dpyc5xd6rsgbr" path="res://elemenpopup/10.png" id="8_h0uw4"]
@@ -15,24 +15,24 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_56r0j"]
 load_path = "res://.godot/imported/12.png-842801d0f93ec7443ce32ccf269227a3.ctex"
 
-[node name="gajah_quiz" type="Node2D" unique_id=1045856533]
+[node name="GajahQuiz" type="Node2D" unique_id=1045856533]
 script = ExtResource("1_7lxka")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1378152634]
 
 [node name="Background" type="TextureRect" parent="UI" unique_id=1940743252]
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 639.0
-offset_bottom = 361.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 637.0
+offset_bottom = 360.0
 texture = ExtResource("2_7lxka")
 expand_mode = 1
 
 [node name="MaterialPanel" type="TextureRect" parent="UI" unique_id=519978096]
-offset_left = 130.0
-offset_top = 17.0
-offset_right = 532.0
-offset_bottom = 349.0
+offset_left = 109.0
+offset_top = 9.0
+offset_right = 511.0
+offset_bottom = 341.0
 texture = ExtResource("3_h0mgq")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -43,7 +43,7 @@ offset_left = 165.0
 offset_top = -7.0
 offset_right = 242.0
 offset_bottom = 58.0
-texture = ExtResource("4_t0efw")
+texture = ExtResource("4_7lxka")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -61,15 +61,16 @@ metadata/_edit_use_anchors_ = true
 [node name="MaterialText" type="RichTextLabel" parent="UI/MaterialPanel/MaterialContentBox" unique_id=1978909650]
 visible = false
 layout_mode = 0
-offset_left = 33.0
-offset_top = 81.0
+offset_left = 34.0
+offset_top = 79.0
 offset_right = 295.0
-offset_bottom = 281.0
-theme_override_fonts/normal_font = ExtResource("6_h0mgq")
+offset_bottom = 269.0
+theme_override_fonts/normal_font = ExtResource("6_7lxka")
 theme_override_font_sizes/normal_font_size = 12
-text = "Gajah adalah hewan darat terbesar di dunia. Gajah termasuk hewan mamalia karena melahirkan dan menyusui anaknya.
-Gajah adalah hewan herbivora, yaitu pemakan tumbuhan. Makanan gajah adalah rumput, daun, buah, dan ranting.
-Gajah memiliki belalai panjang yang digunakan untuk bernapas, minum, mengambil makanan, dan menyentuh benda. Gajah juga memiliki telinga besar dan hidup berkelompok di hutan atau padang rumput."
+bbcode_enabled = true
+text = "Gajah adalah hewan besar yang mempunyai 4 kaki, 2 telinga, 2 mata, 2 gading, dan 1 belalai. Belalai digunakan untuk mengambil makanan, minum air, dan mencium bau. 
+Gajah termasuk hewan herbivora karena memakan tumbuhan seperti rumput, daun, dan buah. 
+Gajah biasanya hidup berkelompok yang disebut kawanan.Kita bisa belajar berhitung dari bagian tubuh gajah, seperti menghitung kaki, telinga, dan belalai dari beberapa gajah."
 horizontal_alignment = 3
 
 [node name="QuizPanel" type="TextureRect" parent="UI/MaterialPanel/MaterialContentBox" unique_id=311491934]
@@ -88,15 +89,15 @@ offset_bottom = 308.26498
 [node name="QuestionLabel" type="Label" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel" unique_id=843150336]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0031397175
-anchor_top = 0.051001832
-anchor_right = -0.0031397175
-anchor_bottom = 0.06948074
+anchor_left = 0.0047095763
+anchor_top = 0.10181884
+anchor_right = 0.0047095763
+anchor_bottom = 0.07853537
 offset_left = 222.0
 offset_top = -347.0
 offset_right = 462.0
 offset_bottom = -299.0
-theme_override_fonts/font = ExtResource("6_h0mgq")
+theme_override_fonts/font = ExtResource("6_7lxka")
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -104,9 +105,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0031397175
-anchor_top = 0.120297745
-anchor_right = 0.006279435
-anchor_bottom = 0.1295372
+anchor_top = 0.11567802
+anchor_right = 0.0031397175
+anchor_bottom = 0.11567802
 offset_left = 220.0
 offset_top = -319.0
 offset_right = 328.0
@@ -118,30 +119,27 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LabelA" type="Label" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel/ButtonA" unique_id=1304998535]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.009090944
-anchor_top = 0.021289948
-anchor_right = 1.0090909
-anchor_bottom = 1.02129
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 7.0
 offset_top = 35.680023
 offset_right = -8.0
 offset_bottom = -4.319977
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_h0mgq")
+theme_override_fonts/font = ExtResource("6_7lxka")
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonB" type="TextureButton" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel" unique_id=618778345]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.006279435
+anchor_left = 0.0031397175
 anchor_top = -1.2322234
-anchor_right = 1.0292795
-anchor_bottom = 0.12935238
+anchor_right = 1.0261397
+anchor_bottom = 0.11087346
 offset_left = 353.0
 offset_top = -26.229248
 offset_right = -190.651
@@ -154,29 +152,29 @@ metadata/_edit_use_anchors_ = true
 [node name="LabelB" type="Label" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel/ButtonB" unique_id=688628055]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -0.016223228
+anchor_left = -0.009259259
+anchor_top = 0.015768213
 anchor_right = 1.0
-anchor_bottom = 1.0322589
+anchor_bottom = 1.0219071
 offset_left = 8.0
 offset_top = 36.0
 offset_right = -7.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_h0mgq")
+theme_override_fonts/font = ExtResource("6_7lxka")
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonC" type="TextureButton" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel" unique_id=1869795255]
 custom_minimum_size = Vector2(108, 60)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0094191525
+anchor_left = 0.0015698588
 anchor_top = 0.1125365
-anchor_right = 1.0078493
-anchor_bottom = 1.0654525
+anchor_right = 1.0015699
+anchor_bottom = 1.0608327
 offset_left = 289.0
 offset_top = -264.31998
 offset_right = -240.0
@@ -191,38 +189,35 @@ metadata/_edit_use_anchors_ = true
 [node name="LabelC" type="Label" parent="UI/MaterialPanel/MaterialContentBox/QuizPanel/ButtonC" unique_id=1263662426]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.042016808
-anchor_top = 0.046875
-anchor_right = 0.99159664
-anchor_bottom = 0.96875
+anchor_top = 0.031746093
+anchor_right = 1.0
+anchor_bottom = 0.998557
 offset_left = 5.0
 offset_top = 36.0
 offset_right = -6.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_h0mgq")
+theme_override_fonts/font = ExtResource("6_7lxka")
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ResultText" type="RichTextLabel" parent="UI/MaterialPanel/MaterialContentBox" unique_id=962897644]
+visible = false
 layout_mode = 0
-offset_left = 42.0
-offset_top = 138.0
-offset_right = 283.0
-offset_bottom = 277.0
-theme_override_fonts/normal_font = ExtResource("6_h0mgq")
+offset_left = 46.0
+offset_top = 133.0
+offset_right = 284.0
+offset_bottom = 264.0
+theme_override_fonts/normal_font = ExtResource("6_7lxka")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="StarContainer" type="Control" parent="UI/MaterialPanel/MaterialContentBox" unique_id=304414260]
-visible = false
 layout_mode = 1
 anchor_left = 0.53000003
 anchor_top = 0.24700001
@@ -236,30 +231,30 @@ offset_bottom = 39.514
 [node name="Star1" type="TextureRect" parent="UI/MaterialPanel/MaterialContentBox/StarContainer" unique_id=1771057741]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
-offset_left = 30.0
-offset_top = -14.9520035
-offset_right = 80.0
-offset_bottom = 40.047997
+offset_left = 31.0
+offset_top = -12.9520035
+offset_right = 67.0
+offset_bottom = 28.047997
 texture = ExtResource("7_3t02x")
 expand_mode = 1
 
 [node name="Star2" type="TextureRect" parent="UI/MaterialPanel/MaterialContentBox/StarContainer" unique_id=1062414627]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
-offset_left = 67.0
-offset_top = -4.9520035
-offset_right = 116.0
-offset_bottom = 55.047997
+offset_left = -1.0
+offset_top = -2.9520035
+offset_right = 37.0
+offset_bottom = 38.047997
 texture = ExtResource("7_3t02x")
 expand_mode = 1
 
 [node name="Star3" type="TextureRect" parent="UI/MaterialPanel/MaterialContentBox/StarContainer" unique_id=270947830]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
-offset_left = -10.0
-offset_top = -3.9520035
-offset_right = 42.0
-offset_bottom = 55.047997
+offset_left = 63.0
+offset_top = -1.9520035
+offset_right = 101.0
+offset_bottom = 39.047997
 texture = ExtResource("7_3t02x")
 expand_mode = 1
 

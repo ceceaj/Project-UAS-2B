@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("elephant:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -21,10 +21,11 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_7gnv4"]
 resource_name = "elephant"
 length = 3.5666666
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("elephant:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -41,23 +42,31 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_448ch"]
-size = Vector2(973, 856)
+size = Vector2(288.25, 206.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fysu2"]
+size = Vector2(734.5, 493.75)
 
 [node name="elephant" type="CharacterBody2D" unique_id=1288512703]
 script = ExtResource("1_fysu2")
 
-[node name="elephant" type="Sprite2D" parent="." unique_id=270042055]
-position = Vector2(-314.0025, -27.224007)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=76908529]
+libraries/ = SubResource("AnimationLibrary_i513r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=270042055]
 scale = Vector2(2.2048497, 2.1231809)
 texture = ExtResource("1_o1n8o")
 hframes = 3
 vframes = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=76908529]
-libraries/ = SubResource("AnimationLibrary_i513r")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1276124529]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237589784]
-position = Vector2(-240, -24)
+position = Vector2(34.875, -3.25)
 shape = SubResource("RectangleShape2D_448ch")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1276124529]
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1374021062]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1558975979]
+position = Vector2(42, 5)
+shape = SubResource("RectangleShape2D_fysu2")

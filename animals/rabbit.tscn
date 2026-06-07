@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dqov0hnqb30s1"]
 
+[ext_resource type="Script" uid="uid://ccix4vaw17qob" path="res://animals/rabbit.gd" id="1_h6fid"]
 [ext_resource type="Texture2D" uid="uid://rqfcahcexhfh" path="res://animals/rabbit.png" id="1_vab1x"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6fid"]
-size = Vector2(753, 377)
 
 [sub_resource type="Animation" id="Animation_5pghb"]
 length = 0.001
@@ -42,16 +40,31 @@ _data = {
 &"rabbit": SubResource("Animation_mog2y")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2065475722]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6fid"]
+size = Vector2(115.25, 101.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vab1x"]
+size = Vector2(279, 181)
+
+[node name="rabbit" type="CharacterBody2D" unique_id=2065475722]
+script = ExtResource("1_h6fid")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2070282146]
+libraries/ = SubResource("AnimationLibrary_f08sf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1117418802]
 texture = ExtResource("1_vab1x")
 hframes = 4
 vframes = 2
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2105716742]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=849892865]
-position = Vector2(13.5, 14.5)
+position = Vector2(26, 56)
 shape = SubResource("RectangleShape2D_h6fid")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2070282146]
-libraries/ = SubResource("AnimationLibrary_f08sf")
+[node name="InteractionArea" type="Area2D" parent="." unique_id=335100702]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1783999864]
+position = Vector2(29.5, 55.5)
+shape = SubResource("RectangleShape2D_vab1x")

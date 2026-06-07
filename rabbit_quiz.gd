@@ -2,18 +2,18 @@ extends Node2D
 
 var questions: Array[Dictionary] = [
 	{
-		"question": "Anak sapi disebut...",
-		"answers": ["Pedet", "Cempe", "Anak ayam"],
+		"question": "1. Kata kelinci dieja menjadi...",
+		"answers": ["A. k-e-l-i-n-c-i", "B. k-e-n-l-i-c-i", "C. k-l-e-i-n-c-i"],
 		"correct": 0
 	},
 	{
-		"question": "Makanan utama sapi adalah...",
-		"answers": ["Ikan", "Rumput", "Daging"],
-		"correct": 1
+		"question": "2. Kata telinga dieja menjadi...",
+		"answers": ["A. t-e-l-i-n-g-a", "B. t-e-g-l-i-n-a", "C. t-i-l-e-n-g-a"],
+		"correct": 0
 	},
 	{
-		"question": "Manfaat sapi bagi manusia adalah...",
-		"answers": ["Susu", "Madu", "Telur"],
+		"question": "3. Kelinci melompat menggunakan...",
+		"answers": ["A. Kaki belakang", "B. Sayap", "C. Sirip"],
 		"correct": 0
 	}
 ]
@@ -79,7 +79,7 @@ func show_material_state() -> void:
 	retry_button.visible = false
 
 	material_text.bbcode_enabled = true
-	material_text.text = "Sapi adalah hewan ternak yang banyak dipelihara manusia. Sapi termasuk hewan mamalia karena menyusui anaknya. Anak sapi disebut pedet.\n\nSapi adalah hewan herbivora, yaitu pemakan tumbuhan. Makanan utama sapi adalah rumput, tetapi sapi juga bisa makan jerami dan pakan ternak.\n\nSapi sangat bermanfaat bagi manusia. Sapi dapat menghasilkan susu, dan kotorannya bisa dimanfaatkan sebagai pupuk tanaman. Agar tetap sehat, sapi perlu diberi makan, minum air bersih, dan tinggal di kandang yang bersih."
+	material_text.text = "Kelinci adalah hewan kecil yang lucu. Kata kelinci dieja k-e-l-i-n-c-i. Kelinci mempunyai telinga yang panjang. Kata telinga dieja t-e-l-i-n-g-a. Kelinci suka makan wortel dan rumput. Kelinci melompat menggunakan kaki belakangnya yang kuat."
 
 
 func _on_start_quiz_button_pressed() -> void:
@@ -139,8 +139,10 @@ func answer_question(selected_index: int) -> void:
 
 	if selected_index == correct_index:
 		score += 1
+		print("Jawaban benar")
 	else:
 		wrong_attempts += 1
+		print("Jawaban salah")
 
 	await get_tree().create_timer(0.8).timeout
 
@@ -153,7 +155,7 @@ func answer_question(selected_index: int) -> void:
 
 
 func show_quiz_finished() -> void:
-	print("Kuis sapi selesai. Skor: ", score, " dari ", questions.size())
+	print("Kuis kelinci selesai. Skor: ", score, " dari ", questions.size())
 
 	material_text.visible = false
 	quiz_panel.visible = false
@@ -197,21 +199,23 @@ func show_result_text() -> void:
 
 	if score == questions.size():
 		title_result = "Hebat!"
-		message = "Kamu menyelesaikan level sapi dengan sempurna!"
-		hint_text = "Cari hewan gajah untuk\nmelanjutkan ke [color=#FFD84D]Level berikutnya![/color]"
+		message = "Kamu menyelesaikan level kelinci dengan sempurna!"
+		hint_text = "Level kelinci selesai.\nKlik selesai untuk kembali ke map."
 	elif score == 2:
 		title_result = "Bagus!"
-		message = "Kamu hampir menguasai materi sapi."
-		hint_text = "Ulangi kuis untuk mendapatkan\npetunjuk berikutnya."
+		message = "Kamu hampir menguasai materi kelinci."
+		hint_text = "Ulangi kuis untuk mendapatkan\nhasil yang lebih baik."
 	else:
 		title_result = "Tetap Semangat!"
 		message = "Baca lagi materinya dan coba pahami kembali."
-		hint_text = "Ulangi kuis untuk mendapatkan\npetunjuk berikutnya."
+		hint_text = "Ulangi kuis untuk memperbaiki skor."
 
 	result_text.bbcode_enabled = true
 	result_text.text = "[center]" \
 		+ "[color=#FFD84D][font_size=12]" + title_result + "[/font_size][/color]\n\n" \
 		+ "[font_size=10]" \
+		+ "Skor Benar: [color=#55FF55]" + str(score) + "/" + str(questions.size()) + "[/color]\n" \
+		+ "Jumlah Salah: [color=#FF6B5A]" + str(wrong_attempts) + "[/color]\n\n" \
 		+ message + "\n\n" \
 		+ hint_text \
 		+ "[/font_size]" \
