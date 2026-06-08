@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://liobxgs1dxfk"]
+
+[ext_resource type="Script" uid="uid://cha1nlu63n5bn" path="res://pop_up_congratulation.gd" id="1_bvcpq"]
+[ext_resource type="Texture2D" uid="uid://dh657km7y14wb" path="res://Background Congratulation.jpeg" id="2_bvcpq"]
+[ext_resource type="Texture2D" uid="uid://17b211p0goqo" path="res://elemenpopup/8540dffe-a66d-4237-9f5e-d2a367a63c7f__1_-removebg-preview.png" id="2_cd2l8"]
+[ext_resource type="Texture2D" uid="uid://dbdd8xdj3ywh2" path="res://elemenpopup/13.png" id="4_3h87t"]
+[ext_resource type="Texture2D" uid="uid://deluxw2sr4rks" path="res://hewan congrats.png" id="4_bvcpq"]
+
+[node name="PopUp Congratulation" type="CanvasLayer" unique_id=841910069]
+script = ExtResource("1_bvcpq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=257197808]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -505.0
+offset_right = 493.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_bvcpq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel Pop Up" type="TextureRect" parent="." unique_id=1279220772]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -144.0
+offset_right = 291.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cd2l8")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel Pop Up" unique_id=1778841203]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 49.0
+offset_right = 445.0
+offset_bottom = 211.0
+mouse_filter = 2
+texture = ExtResource("4_bvcpq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="tombol selesai" type="TextureButton" parent="Panel Pop Up" unique_id=2135492943]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 166.0
+offset_right = 382.0
+offset_bottom = 280.0
+texture_normal = ExtResource("4_3h87t")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="teks apresiasi" type="Label" parent="Panel Pop Up" unique_id=562858285]
+layout_mode = 0
+offset_left = 70.0
+offset_top = -38.0
+offset_right = 533.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 11
+text = "                                                                                                                                                         \"Luar Biasa! Kamu telah berhasil menemui semua hewan dan menyelesaikan semua tantangannya. Kamu resmi jadi Sahabat Satwa sejati!\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Panel Pop Up/tombol selesai" to="." method="_on_tombol_selesai_pressed"]

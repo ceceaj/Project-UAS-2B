@@ -228,7 +228,20 @@ func _on_back_button_pressed() -> void:
 
 func _on_finish_button_pressed() -> void:
 	DataGame.gajah_selesai = true
-	get_tree().change_scene_to_file("res://world/world.tscn")
+	
+	# Ini yang bikin kuis di belakangnya langsung sembunyi dan ga ketumpuk lagi
+	$UI.visible = false
+	
+	print("Membuka pop-up congratulation dari kuis gajah...")
+	
+	# 1. Load file scene pop-up congratulation kamu
+	var popup_scene = preload("res://pop_up_congratulation.tscn")
+	
+	# 2. Buat instansiasi / copy dari scene tersebut
+	var popup_instance = popup_scene.instantiate()
+	
+	# 3. Munculkan pop-up ke atas layar kuis gajah saat ini
+	add_child(popup_instance)
 
 
 func _on_retry_button_pressed() -> void:
