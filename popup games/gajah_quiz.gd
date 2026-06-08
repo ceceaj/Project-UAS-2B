@@ -85,8 +85,8 @@ func show_material_state() -> void:
 
 
 func _on_start_quiz_button_pressed() -> void:
+	SoundHandler.play_sound("click")
 	start_quiz()
-
 
 func start_quiz() -> void:
 	current_question_index = 0
@@ -158,6 +158,7 @@ func answer_question(selected_index: int) -> void:
 
 func show_quiz_finished() -> void:
 	print("Kuis gajah selesai. Skor: ", score, " dari ", questions.size())
+	SoundHandler.play_sound("cahaya")
 
 	material_text.visible = false
 	quiz_panel.visible = false
@@ -223,10 +224,12 @@ func show_result_text() -> void:
 
 
 func _on_back_button_pressed() -> void:
+	SoundHandler.play_sound("click")
 	get_tree().change_scene_to_file("res://world/world.tscn")
 
 
 func _on_finish_button_pressed() -> void:
+	SoundHandler.play_sound("click")
 	DataGame.gajah_selesai = true
 	
 	# Ini yang bikin kuis di belakangnya langsung sembunyi dan ga ketumpuk lagi
@@ -245,4 +248,5 @@ func _on_finish_button_pressed() -> void:
 
 
 func _on_retry_button_pressed() -> void:
+	SoundHandler.play_sound("click")
 	show_material_state()

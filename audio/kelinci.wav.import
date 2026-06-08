@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://ciw8vqrddwfet"
-path="res://.godot/imported/tutup pintu.wav-17e556c25285736d6929dd3ef96f3bf4.sample"
+uid="uid://d1ylhyw44rivo"
+path="res://.godot/imported/kelinci.wav-77abcb62c7e12ea22cf38dcaf6e5cdba.sample"
 
 [deps]
 
-source_file="res://audio/tutup pintu.wav"
-dest_files=["res://.godot/imported/tutup pintu.wav-17e556c25285736d6929dd3ef96f3bf4.sample"]
+source_file="res://audio/kelinci.wav"
+dest_files=["res://.godot/imported/kelinci.wav-77abcb62c7e12ea22cf38dcaf6e5cdba.sample"]
 
 [params]
 

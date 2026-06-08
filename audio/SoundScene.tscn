@@ -1,15 +1,23 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://c78l1fc2erku4"]
 
-[ext_resource type="Script" path="res://audio/sound_handler.gd" id="1_sound"]
+[ext_resource type="Script" path="res://audio/sound_handler.gd" id="1_2fd36"]
+[ext_resource type="AudioStream" path="res://audio/bgm.ogg" id="2_bgm"]
+[ext_resource type="AudioStream" path="res://audio/sfx_click.wav" id="3_click"]
+[ext_resource type="AudioStream" path="res://audio/sfx_dialog_muncul.ogg" id="4_dialog"]
+[ext_resource type="AudioStream" path="res://audio/sfx_ketikan.ogg" id="5_ketikan"]
+[ext_resource type="AudioStream" path="res://audio/sfx_jawaban_benar.wav" id="6_benar"]
+[ext_resource type="AudioStream" path="res://audio/sfx_jawban_salah.wav" id="7_salah"]
 
-[node name="SoundHandler" type="Node"]
-script = ExtResource("1_sound")
+[node name="Sound" type="Node"]
+script = ExtResource("1_2fd36")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
+stream = ExtResource("2_bgm")
+autoplay = true
+bus = "Master"
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -4.0
+bus = "Master"
 
 [node name="NpcPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -2.0
+bus = "Master"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bulli6pulr8sx" path="res://animals/cow.gd" id="1_pex83"]
 [ext_resource type="Texture2D" uid="uid://cbmkb7rbbs488" path="res://animals/Free Cow Sprites-export.png" id="2_u8xg7"]
+[ext_resource type="AudioStreamWAV" path="res://audio/sapi.wav" id="3_sapi_sound"]
 
 [sub_resource type="Animation" id="Animation_g02ib"]
 length = 0.001
@@ -58,6 +59,7 @@ vframes = 2
 frame = 4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2040874164]
+stream = ExtResource("3_sapi_sound")
 volume_db = -8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894401922]

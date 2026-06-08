@@ -11,9 +11,9 @@ var npc_sfx: Dictionary = {}
 
 func _ready() -> void:
 	music = {
-		"title": load("res://audio/bgm.wav"),
-		"world": load("res://audio/bgm.wav"),
-		"quiz": load("res://audio/bgm.wav")
+		"title": load("res://audio/bgm.ogg"),
+		"world": load("res://audio/bgm.ogg"),
+		"quiz": load("res://audio/bgm.ogg")
 	}
 
 	sfx = {
@@ -23,14 +23,19 @@ func _ready() -> void:
 		"correct": load("res://audio/sfx_jawaban_benar.wav"),
 		"wrong": load("res://audio/sfx_jawban_salah.wav"),
 		"door_open": load("res://audio/sound buka pintu.wav"),
-		"door_close": load("res://audio/tutup pintu.wav")
+		"door_close": load("res://audio/sound buka pintu.wav"),
+		"cahaya": load("res://audio/Sfx_Suara cahaya muncul.wav")
 	}
 
 	npc_sfx = {
-		"kelinci": load("res://audio/sfx_dialog_muncul.ogg"),
+		"kelinci": load("res://audio/kelinci.wav"),
+		"sapi": load("res://audio/sapi.wav"),
 		"gajah": load("res://audio/Gajah.mp3"),
 		"burung": load("res://audio/burung.mp3")
 	}
+
+	# Set looping on music player
+	music_player.finished.connect(_on_music_finished)
 
 	play_music("title")
 
@@ -67,6 +72,16 @@ func play_sound(sound_name = "click") -> void:
 		return
 
 	sfx_player.stream = sfx[resolved_name]
+
+	# Volume per jenis sfx
+	match resolved_name:
+		"click":
+			sfx_player.volume_db = 4.0
+		"dialog", "cahaya":
+			sfx_player.volume_db = 3.0
+		_:
+			sfx_player.volume_db = 0.0
+
 	sfx_player.play()
 
 func play_npc_sound(npc_name: String) -> bool:
@@ -80,3 +95,8 @@ func play_npc_sound(npc_name: String) -> bool:
 	npc_player.stream = npc_sfx[npc_name]
 	npc_player.play()
 	return true
+
+func _on_music_finished() -> void:
+	# Loop musik secara manual agar kompatibel dengan semua format audio
+	if can_play and music_player.stream != null:
+		music_player.play()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmufdgolayvja"]
+[gd_scene load_steps=6 format=3 uid="uid://bmufdgolayvja"]
 
 [ext_resource type="Script" path="res://player/player_character.gd" id="1_lg5xw"]
 [ext_resource type="Texture2D" uid="uid://bri7cxs327ldc" path="res://common/assets/images/effects/tdfarmfx_shadow_1.png" id="2_lkmir"]
 [ext_resource type="SpriteFrames" uid="uid://crww0m2lcreh7" path="res://player/resources/player_character.tres" id="2_nllpk"]
+[ext_resource type="AudioStreamWAV" path="res://audio/langkah 1.wav" id="3_langkah"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soc8u"]
 radius = 2.0
@@ -30,3 +31,7 @@ limit_bottom = 800
 position = Vector2(0, 11)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_soc8u")
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_langkah")
+volume_db = 2.0

@@ -43,7 +43,7 @@ var player_data: Dictionary = {
 
 # TileMap reference
 @onready var tile_map: TileMap = $"../WorldTileMap"
-@onready var hotbar = $"../HUD/HotBar"
+@onready var hotbar = get_node_or_null("../HUD/HotBar")
 
 func _ready() -> void:
 	selected_crop = crop_strnames[0]
@@ -92,10 +92,10 @@ func _handle_key_press(event: InputEventKey) -> void:
 		for i in range(10):
 			if event.is_action_pressed(str("slot_", i)):
 				selected_crop = crop_strnames[i-1]
-				hotbar.select_slot(i-1)
+				if hotbar: hotbar.select_slot(i-1)
 			elif event.is_action_pressed(str("slot_10")): #special hardcoded exception
 				selected_crop = crop_strnames[9]
-				hotbar.select_slot(9)
+				if hotbar: hotbar.select_slot(9)
 
 ## Docstring
 func is_mouse_in_range() -> bool:

@@ -15,8 +15,10 @@ func _ready():
 
 func _on_start_quiz_button_pressed():
 	print("Tombol Mulai Gajah ditekan")
+	SoundHandler.play_sound("click")
 	get_tree().change_scene_to_file("res://popup games/gajah_quiz.tscn")
 
 func _on_close_button_pressed():
 	print("Tombol Kembali Elephant ditekan")
+	SoundHandler.play_sound("click")
 	queue_free()

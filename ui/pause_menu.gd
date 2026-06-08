@@ -42,6 +42,7 @@ func CloseMenu():
 
 #EXITS GAME WHEN QUIT BUTTON IS PRESSED
 func _on_exit_pressed():
+	SoundHandler.play_sound("click")
 	var world = get_node("/root/Game/World")
 	if world and world.has_signal("level_changed"):
 		CloseMenu()
@@ -50,11 +51,13 @@ func _on_exit_pressed():
 
 #OPENS OPTIONS MENU
 func _on_options_pressed():
+	SoundHandler.play_sound("click")
 	options_menu.visible = true
 	buttons_menu.visible = false
 
 #TOGGLES GAME MUSIC ON AND OFF
 func _on_music_toggle_toggled(button_pressed):
+	SoundHandler.play_sound("click")
 	if button_pressed:
 		SoundHandler.can_play = false
 		SoundHandler.stop_music()
@@ -64,5 +67,6 @@ func _on_music_toggle_toggled(button_pressed):
 
 #RETURNS OPTION MENU BACK TO MAIN PAUSE MENU
 func _on_back_button_pressed():
+	SoundHandler.play_sound("click")
 	options_menu.visible = false
 	buttons_menu.visible = true

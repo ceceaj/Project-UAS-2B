@@ -6,21 +6,24 @@ const speed : float = 80.0
 
 #variables for controlling player animations
 @onready var anim : AnimatedSprite2D = $AnimatedSprite2D
+@onready var footstep_player : AudioStreamPlayer = $FootstepPlayer
 var direction : String = "down_idle"
 
-
+# Footstep timer — interval antar langkah (detik)
+var footstep_timer : float = 0.0
+const FOOTSTEP_INTERVAL : float = 0.38
 
 
 func _ready():
 	anim.play("down_idle")
 
 #player physics
-func _physics_process(_delta):
+func _physics_process(delta):
 	move_player()
 	idle_animations()
 	walk_animations()
+	play_footstep(delta)
 	move_and_slide()
-
 
 
 #----- ACTIONS -----
@@ -33,6 +36,20 @@ func move_player():
 		velocity = input_vector * speed
 	else:
 		velocity = Vector2.ZERO
+
+
+#----- FOOTSTEP AUDIO -----
+#--------------------------
+func play_footstep(delta: float) -> void:
+	if velocity != Vector2.ZERO:
+		footstep_timer -= delta
+		if footstep_timer <= 0.0:
+			footstep_player.play()
+			footstep_timer = FOOTSTEP_INTERVAL
+	else:
+		footstep_timer = 0.0
+		if footstep_player.playing:
+			footstep_player.stop()
 
 
 #----- ANIMATIONS -----

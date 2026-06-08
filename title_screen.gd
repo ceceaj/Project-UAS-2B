@@ -35,8 +35,8 @@ func _ready():
 
 ## Switches from main menu to main scene when player presses play button
 func _on_play_pressed():
+	SoundHandler.play_sound("click")
 	start_intro_sequence()
-	#get_tree().change_scene_to_file()
 
 func start_intro_sequence():
 	if intro_started:
@@ -66,16 +66,19 @@ func intro_finished():
 
 #Hides main menu and opens options menu when options button is pressed
 func _on_options_pressed():
+	SoundHandler.play_sound("click")
 	main_menu_container.visible = false
 	options_container.visible = true
 
 #Hides options menu and returns view to main menu when back button is pressed
 func _on_options_back_pressed():
+	SoundHandler.play_sound("click")
 	main_menu_container.visible = true
 	options_container.visible = false
 
 #Toggles game music on and off
 func _on_music_button_toggled(button_pressed):
+	SoundHandler.play_sound("click")
 	if button_pressed:
 		SoundHandler.can_play = false
 		SoundHandler.stop_music()
@@ -88,11 +91,13 @@ func _on_music_button_toggled(button_pressed):
 
 #Displays credits when pressed
 func _on_credits_pressed():
+	SoundHandler.play_sound("click")
 	main_menu_container.visible = false
 	credits_container.visible = true
 
 #Hides credit when pressed
 func _on_credits_back_pressed():
+	SoundHandler.play_sound("click")
 	main_menu_container.visible = true
 	credits_container.visible = false
 
@@ -102,4 +107,5 @@ func _on_credits_back_pressed():
 
 #Will close and exit the game when the exit button is pressed
 func _on_quit_pressed():
+	SoundHandler.play_sound("click")
 	get_tree().quit()

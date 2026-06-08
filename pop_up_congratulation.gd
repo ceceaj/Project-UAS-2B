@@ -7,11 +7,16 @@ func _ready() -> void:
 	if not tombol.pressed.is_connected(_on_tombol_selesai_pressed):
 		tombol.pressed.connect(_on_tombol_selesai_pressed)
 	
+	# Putar sfx cahaya saat popup muncul
+	SoundHandler.play_sound("cahaya")
+	
 	# TRICK: Mulai cicil loading map utama di background sejak pop-up ini PERTAMA KALI MUNCUL
 	ResourceLoader.load_threaded_request(target_scene)
 
 func _on_tombol_selesai_pressed() -> void:
 	var tombol = $"Panel Pop Up/tombol selesai"
+	
+	SoundHandler.play_sound("click")
 	
 	# Matikan tombol agar tidak bisa di-spam klik saat proses pindah
 	tombol.disabled = true

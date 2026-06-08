@@ -14,7 +14,10 @@ var timer : float = 0.0
 func _ready():
 	randomize()
 	get_new_direction()
-	animation_player.play("fly")
+	if animation_player.has_animation("fly"):
+		animation_player.play("fly")
+	elif animation_player.has_animation("gerak bird"):
+		animation_player.play("gerak bird")
 	interaction_area.body_entered.connect(_on_interaction_area_body_entered)
 
 func _physics_process(delta):

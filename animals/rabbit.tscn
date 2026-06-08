@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccix4vaw17qob" path="res://animals/rabbit.gd" id="1_h6fid"]
 [ext_resource type="Texture2D" uid="uid://rqfcahcexhfh" path="res://animals/rabbit.png" id="1_vab1x"]
-[ext_resource type="AudioStreamOggVorbis" uid="uid://civrtx77vxi5c" path="res://audio/sfx_dialog_muncul.ogg" id="2_rabbit_sound"]
+[ext_resource type="AudioStreamWAV" path="res://audio/kelinci.wav" id="2_rabbit_sound"]
 
 [sub_resource type="Animation" id="Animation_5pghb"]
 length = 0.001
