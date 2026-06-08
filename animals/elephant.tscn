@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpblxbqq7kn3p" path="res://animals/elephant.gd" id="1_fysu2"]
 [ext_resource type="Texture2D" uid="uid://cmkpmdyrv0tap" path="res://animals/elephant.png" id="1_o1n8o"]
-[ext_resource type="AudioStreamWAV" uid="uid://btvsgpygis4rt" path="res://audio/Gajah.wav" id="2_gajah"]
+[ext_resource type="AudioStreamMP3" path="res://audio/Gajah.mp3" id="2_gajah"]
 
 [sub_resource type="Animation" id="Animation_fysu2"]
 length = 0.001

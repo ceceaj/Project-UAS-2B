@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://btb7dyil8vdlj"]
+[gd_scene load_steps=8 format=3 uid="uid://btb7dyil8vdlj"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_nuk1h"]
 [ext_resource type="Texture2D" uid="uid://qyieil7nkodp" path="res://SeasonsGoneLogoTransparent.png" id="2_llwey"]
 [ext_resource type="TileSet" uid="uid://cwsblrq7g17wg" path="res://world/world_tilemap/world_map_tileset.tres" id="3_xofvf"]
+[ext_resource type="VideoStreamTheora" path="res://video/Intro.ogv" id="4_intro"]
 
 [sub_resource type="Animation" id="Animation_kc2k1"]
 length = 0.001
@@ -251,6 +252,40 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 text = "Back"
 
+[node name="IntroLayer" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IntroVideo" type="VideoStreamPlayer" parent="CanvasLayer/IntroLayer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_intro")
+expand = true
+
+[node name="IntroFade" type="ColorRect" parent="CanvasLayer/IntroLayer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="finished" from="CanvasLayer/IntroLayer/IntroVideo" to="." method="_on_intro_video_finished"]
 [connection signal="pressed" from="CanvasLayer/Control/MainMenuContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MainMenuContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MainMenuContainer/Credits" to="." method="_on_credits_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cysbyttm6ku37" path="res://animals/bird.gd" id="1_0tjls"]
 [ext_resource type="Texture2D" uid="uid://64oaai68n4xm" path="res://animals/bird.png" id="2_63wqu"]
-[ext_resource type="AudioStreamWAV" uid="uid://bfmfqsw7opyq8" path="res://audio/burung.wav" id="3_burung"]
+[ext_resource type="AudioStreamMP3" path="res://audio/burung.mp3" id="3_burung"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tjls"]
 radius = 125.75472

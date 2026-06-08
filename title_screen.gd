@@ -5,11 +5,18 @@ extends Node
 @onready var options_container = %OptionsContainer
 @onready var credits_container = %CreditsContainer
 @onready var bg_pan = $AnimationPlayer
+@onready var intro_layer: Control = %IntroLayer
+@onready var intro_video: VideoStreamPlayer = %IntroVideo
+@onready var intro_fade: ColorRect = %IntroFade
 
 
 signal level_changed(level_name)
 
 @export var world_level: PackedScene = load("res://world/world.tscn")
+
+const INTRO_FADE_DURATION := 1.0
+
+var intro_started := false
 
 #Sets up panning background and correct buttons displayed
 func _ready():
@@ -18,14 +25,41 @@ func _ready():
 	main_menu_container.visible = true
 	options_container.visible = false
 	credits_container.visible = false
+	intro_layer.visible = false
+	intro_video.modulate.a = 1.0
+	intro_fade.color = Color.BLACK
+	intro_fade.color.a = 0.0
 
 # --------- PLAY BUTTON ---------
 #--------------------------------
 
 ## Switches from main menu to main scene when player presses play button
 func _on_play_pressed():
-	emit_signal("level_changed", world_level)
+	start_intro_sequence()
 	#get_tree().change_scene_to_file()
+
+func start_intro_sequence():
+	if intro_started:
+		return
+
+	intro_started = true
+	SoundHandler.stop_music()
+	main_menu_container.visible = false
+	options_container.visible = false
+	credits_container.visible = false
+	intro_layer.visible = true
+	intro_video.play()
+
+func _on_intro_video_finished():
+	await intro_finished()
+
+func intro_finished():
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(intro_video, "modulate:a", 0.0, INTRO_FADE_DURATION)
+	tween.tween_property(intro_fade, "color:a", 1.0, INTRO_FADE_DURATION)
+	await tween.finished
+	emit_signal("level_changed", world_level)
 
 # --------- OPTIONS CONTROL ---------
 #------------------------------------
