@@ -8,13 +8,20 @@ func _ready():
 	print("CowInteractionPopup berhasil muncul")
 
 	label.text = "Mau menjawab kuis tentang sapi?"
-	
+
 	start_quiz_button.pressed.connect(_on_start_quiz_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
 
 func _on_start_quiz_button_pressed():
-	print("Tombol Mulai Cow ditekan")
-	get_tree().change_scene_to_file("res://popup games/cow_quiz.tscn")
+	if !DataGame.kelinci_selesai:
+		print("POPUP SAPI DIHAPUS")
+
+		queue_free()
+
+		var popup = preload("res://popup peringatan/ui_peringatan.tscn").instantiate()
+		get_tree().root.add_child(popup)
+
+		return
 
 func _on_close_button_pressed():
 	print("Tombol Kembali Cow ditekan")

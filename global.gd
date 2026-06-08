@@ -1,4 +1,8 @@
-class_name Global extends Node
+extends Node
+
+var kelinci_selesai = false
+var sapi_selesai = false
+var gajah_selesai = false
 
 enum SEASONS {
 	SPRING = 1,

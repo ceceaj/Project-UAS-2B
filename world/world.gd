@@ -3,9 +3,9 @@ extends Node2D
 signal level_changed(level_name)
 
 # Public Variables
-const SEASONS := Global.SEASONS
-const MONTHS := Global.MONTHS
-const WEATHER := Global.WEATHER
+const SEASONS := DataGame.SEASONS
+const MONTHS := DataGame.MONTHS
+const WEATHER := DataGame.WEATHER
 const MED_TEMP: Dictionary = {
 	MONTHS.JANUARY: 4,
 	MONTHS.FEBRUARY: 4,
@@ -146,5 +146,4 @@ func _propagate_disease(cell: Vector2i, family: Crop.FAMILIES) -> void:
 			break
 		var neighbor_crop: Crop = tilemap.crop_instances[neighbor_cell]
 		if not neighbor_crop.sick and neighbor_crop.family == family:
-			neighbor_crop.sick = Global.bernoulli(P_PROPAGATION)
-		
+			neighbor_crop.sick = DataGame.bernoulli(P_PROPAGATION)

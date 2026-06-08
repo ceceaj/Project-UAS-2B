@@ -223,6 +223,7 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_finish_button_pressed() -> void:
+	DataGame.gajah_selesai = true
 	get_tree().change_scene_to_file("res://world/world.tscn")
 
 

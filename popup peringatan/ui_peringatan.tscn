@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ca31qk06u2flf"]
+
+[ext_resource type="Script" uid="uid://di1a4vw78wh6g" path="res://popup peringatan/ui_peringatan.gd" id="1_yk0v3"]
+[ext_resource type="Texture2D" uid="uid://dddkut0370avt" path="res://popup peringatan/Papan.png" id="2_hrn2x"]
+[ext_resource type="Texture2D" uid="uid://crfvtaprhlcm0" path="res://popup peringatan/Header.png" id="3_257r4"]
+[ext_resource type="Texture2D" uid="uid://ce0l1oekndv8u" path="res://popup peringatan/Tombol.png" id="4_q8wfs"]
+
+[node name="UI_Peringatan" type="Control" unique_id=470691971]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 150.0
+script = ExtResource("1_yk0v3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2072619567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.003921569)
+
+[node name="Papan" type="TextureRect" parent="." unique_id=500406616]
+layout_mode = 0
+offset_left = 205.0
+offset_top = -9.0
+offset_right = 420.0
+offset_bottom = 209.0
+texture = ExtResource("2_hrn2x")
+expand_mode = 1
+
+[node name="Header" type="TextureRect" parent="." unique_id=53710261]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 83.0
+offset_right = 357.0
+offset_bottom = 135.0
+texture = ExtResource("3_257r4")
+expand_mode = 1
+
+[node name="Tombol" type="TextureRect" parent="." unique_id=164536540]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 171.0
+offset_right = 340.0
+offset_bottom = 209.0
+texture = ExtResource("4_q8wfs")
+expand_mode = 1
+
+[node name="Button_OK" type="Button" parent="Tombol" unique_id=481504998]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 13.0
+offset_right = 55.0
+offset_bottom = 25.0
+flat = true
+
+[node name="Label_Pesan" type="Label" parent="." unique_id=50742942]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 131.0
+offset_right = 384.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 12
+text = "Kamu harus menemui
+Sapi terlebih dahulu!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Tombol/Button_OK" to="." method="_on_button_ok_pressed"]
