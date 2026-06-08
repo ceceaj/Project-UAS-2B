@@ -28,8 +28,8 @@ func _ready() -> void:
 
 	npc_sfx = {
 		"kelinci": load("res://audio/sfx_dialog_muncul.ogg"),
-		"gajah": load("res://audio/Gajah.wav"),
-		"burung": load("res://audio/burung.wav")
+		"gajah": load("res://audio/Gajah.mp3"),
+		"burung": load("res://audio/burung.mp3")
 	}
 
 	play_music("title")
