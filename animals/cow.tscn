@@ -58,6 +58,7 @@ vframes = 2
 frame = 4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2040874164]
+volume_db = -8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894401922]
 shape = SubResource("RectangleShape2D_51p27")

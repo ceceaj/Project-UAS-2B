@@ -6,7 +6,6 @@ extends Control
 @onready var options_menu = %OptionsMenu
 @onready var buttons_menu = %ButtonsMenu
 @onready var background: ColorRect = $Background
-@onready var music = "res://sounds/SoundScene.tscn"
 
 var is_open : bool = false
 

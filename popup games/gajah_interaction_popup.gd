@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var label: Label = $Panel/Label
 
 func _ready():
+	SoundHandler.play_sound("dialog")
 	print("ElephantInteractionPopup berhasil muncul")
 
 	label.text = "Mau menjawab kuis tentang gajah?"
@@ -13,15 +14,8 @@ func _ready():
 	close_button.pressed.connect(_on_close_button_pressed)
 
 func _on_start_quiz_button_pressed():
-	if !DataGame.sapi_selesai:
-		queue_free()
-
-		var popup = preload("res://popup peringatan/ui_peringatan.tscn").instantiate()
-		get_tree().current_scene.add_child(popup)
-		popup.tampilkan_popup("Kamu harus menyelesaikan kuis sapi terlebih dahulu!")
-		return
-
-	get_tree().change_scene_to_file("res://popup games/elephant_quiz.tscn")
+	print("Tombol Mulai Gajah ditekan")
+	get_tree().change_scene_to_file("res://popup games/gajah_quiz.tscn")
 
 func _on_close_button_pressed():
 	print("Tombol Kembali Elephant ditekan")

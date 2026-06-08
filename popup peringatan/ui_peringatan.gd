@@ -1,10 +1,14 @@
-extends Control
+extends CanvasLayer
 
-@onready var label_pesan = $Label_Pesan
+@onready var label_pesan: Label = $Label_Pesan
 
-func tampilkan_popup(teks):
+func _ready() -> void:
+	layer = 100
+	SoundHandler.play_sound("dialog")
+
+func tampilkan_popup(teks: String) -> void:
 	label_pesan.text = teks
-	show()
+	visible = true
 
-func _on_button_ok_pressed():
+func _on_button_ok_pressed() -> void:
 	queue_free()

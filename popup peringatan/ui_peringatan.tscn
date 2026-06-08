@@ -5,12 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://crfvtaprhlcm0" path="res://popup peringatan/Header.png" id="3_257r4"]
 [ext_resource type="Texture2D" uid="uid://ce0l1oekndv8u" path="res://popup peringatan/Tombol.png" id="4_q8wfs"]
 
-[node name="UI_Peringatan" type="Control" unique_id=470691971]
-custom_minimum_size = Vector2(350, 150)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 350.0
-offset_bottom = 150.0
+[node name="UI_Peringatan" type="CanvasLayer" unique_id=470691971]
+layer = 100
 script = ExtResource("1_yk0v3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2072619567]

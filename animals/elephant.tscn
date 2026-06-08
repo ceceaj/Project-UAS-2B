@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpblxbqq7kn3p" path="res://animals/elephant.gd" id="1_fysu2"]
 [ext_resource type="Texture2D" uid="uid://cmkpmdyrv0tap" path="res://animals/elephant.png" id="1_o1n8o"]
+[ext_resource type="AudioStreamWAV" uid="uid://btvsgpygis4rt" path="res://audio/Gajah.wav" id="2_gajah"]
 
 [sub_resource type="Animation" id="Animation_fysu2"]
 length = 0.001
@@ -60,6 +61,8 @@ hframes = 3
 vframes = 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1276124529]
+stream = ExtResource("2_gajah")
+volume_db = -8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237589784]
 position = Vector2(34.875, -3.25)

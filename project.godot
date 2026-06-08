@@ -22,7 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 CropsPreloader="*res://crops/crops_preloader.tscn"
-SoundHandler="*res://sounds/SoundScene.tscn"
+SoundHandler="*res://audio/SoundScene.tscn"
 DataGame="*uid://blh8okkfkmccu"
 
 [display]

@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var label: Label = $Panel/Label
 
 func _ready():
+	SoundHandler.play_sound("dialog")
 	print("RabbitInteractionPopup berhasil muncul")
 
 	label.text = "Mau menjawab kuis tentang kelinci?"

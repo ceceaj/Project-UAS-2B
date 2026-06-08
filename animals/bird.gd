@@ -9,11 +9,13 @@ var timer : float = 0.0
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
+@onready var interaction_area = $Area2D
 
 func _ready():
 	randomize()
 	get_new_direction()
 	animation_player.play("fly")
+	interaction_area.body_entered.connect(_on_interaction_area_body_entered)
 
 func _physics_process(delta):
 
@@ -52,3 +54,21 @@ func get_new_direction():
 	).normalized()
 
 	change_direction_time = randf_range(1.5, 3.5)
+
+func _on_interaction_area_body_entered(body):
+	if body.name == "PlayerCharacter":
+		play_npc_sound()
+
+func play_npc_sound() -> void:
+	var sound_handler = get_node_or_null("/root/SoundHandler")
+	if sound_handler != null and sound_handler.play_npc_sound("burung"):
+		return
+
+	if audio_stream_player_2d == null:
+		push_warning("AudioStreamPlayer2D burung tidak ditemukan")
+		return
+	if audio_stream_player_2d.stream == null:
+		push_warning("Stream audio burung belum terpasang")
+		return
+	audio_stream_player_2d.stop()
+	audio_stream_player_2d.play()

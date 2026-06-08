@@ -47,7 +47,7 @@ var weather := WEATHER.CLEAR
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	## Should load data here if loading a save file
-	pass # Replace with function body.
+	SoundHandler.play_music("world")
 
 func time_skip() -> void:
 	

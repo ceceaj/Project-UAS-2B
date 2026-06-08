@@ -50,6 +50,8 @@ var can_answer: bool = true
 
 
 func _ready() -> void:
+	SoundHandler.play_music("quiz")
+
 	start_quiz_button.pressed.connect(_on_start_quiz_button_pressed)
 	back_button.pressed.connect(_on_back_button_pressed)
 	finish_button.pressed.connect(_on_finish_button_pressed)
@@ -139,8 +141,10 @@ func answer_question(selected_index: int) -> void:
 
 	if selected_index == correct_index:
 		score += 1
+		SoundHandler.play_sound("correct")
 	else:
 		wrong_attempts += 1
+		SoundHandler.play_sound("wrong")
 
 	await get_tree().create_timer(0.8).timeout
 

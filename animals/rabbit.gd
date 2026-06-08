@@ -56,11 +56,26 @@ func get_new_wander_dir():
 	)
 	wanderPos = target_vector
 
+func play_npc_sound() -> void:
+	var sound_handler = get_node_or_null("/root/SoundHandler")
+	if sound_handler != null and sound_handler.play_npc_sound("kelinci"):
+		return
+
+	if audio_stream_player_2d == null:
+		push_warning("AudioStreamPlayer2D kelinci tidak ditemukan")
+		return
+	if audio_stream_player_2d.stream == null:
+		push_warning("Stream audio kelinci belum terpasang")
+		return
+	audio_stream_player_2d.stop()
+	audio_stream_player_2d.play()
+
 func _on_interaction_area_body_entered(body):
 	print("Yang masuk area kelinci: ", body.name)
 	
 	if body.name == "PlayerCharacter":
 		player_inside_area = true
+		play_npc_sound()
 		show_interaction_popup()
 
 func _on_interaction_area_body_exited(body):

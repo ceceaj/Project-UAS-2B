@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var wander_range: float = 5
 @export var speed: int = 5
 @export var popup_scene_path: String = "res://popup games/gajah_interaction_popup.tscn"
+const WARNING_POPUP_SCENE := preload("res://popup peringatan/ui_peringatan.tscn")
 
 var currentPos: Vector2
 var wanderPos: Vector2
@@ -52,11 +53,26 @@ func get_new_wander_dir():
 	)
 	wanderPos = target_vector
 
+func play_npc_sound() -> void:
+	var sound_handler = get_node_or_null("/root/SoundHandler")
+	if sound_handler != null and sound_handler.play_npc_sound("gajah"):
+		return
+
+	if audio_stream_player_2d == null:
+		push_warning("AudioStreamPlayer2D gajah tidak ditemukan")
+		return
+	if audio_stream_player_2d.stream == null:
+		push_warning("Stream audio gajah belum terpasang")
+		return
+	audio_stream_player_2d.stop()
+	audio_stream_player_2d.play()
+
 func _on_interaction_area_body_entered(body):
 	print("Yang masuk area gajah: ", body.name)
 	
 	if body.name == "PlayerCharacter":
 		player_inside_area = true
+		play_npc_sound()
 		show_interaction_popup()
 
 func _on_interaction_area_body_exited(body):
@@ -68,6 +84,15 @@ func _on_interaction_area_body_exited(body):
 
 func show_interaction_popup():
 	if popup_is_open:
+		return
+
+	if !DataGame.sapi_selesai:
+		var warning_popup = WARNING_POPUP_SCENE.instantiate()
+		get_tree().root.add_child(warning_popup)
+		warning_popup.tampilkan_popup("Kamu harus menyelesaikan kuis sapi terlebih dahulu!")
+
+		popup_is_open = true
+		warning_popup.tree_exited.connect(_on_popup_closed)
 		return
 	
 	var popup_scene = load(popup_scene_path)

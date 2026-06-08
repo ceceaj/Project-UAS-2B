@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://audio/sound_handler.gd" id="1_sound"]
+
+[node name="SoundHandler" type="Node"]
+script = ExtResource("1_sound")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
+
+[node name="NpcPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0

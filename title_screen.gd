@@ -13,6 +13,7 @@ signal level_changed(level_name)
 
 #Sets up panning background and correct buttons displayed
 func _ready():
+	SoundHandler.play_music("title")
 	bg_pan.play("bg_panning")
 	main_menu_container.visible = true
 	options_container.visible = false
